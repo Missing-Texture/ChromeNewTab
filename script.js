@@ -3,7 +3,20 @@ var imgHeigh
 var canvas = document.getElementById('wttr')
 var context = canvas.getContext('2d')
 
+var websites = [
+    "https://youtube.com", 
+    "https://reddit.com/", 
+    "https://soundcloud.com/", 
+    "https://twitter.com/", 
+    "https://stackoverflow.com", 
+    "https://github.com/", 
+    "https://mail.google.com", 
+    "https://google.com/maps", 
+    
+]
+
 drawWttrImage()
+addURLs()
 
 function drawWttrImage() {
     img = new Image()
@@ -37,4 +50,25 @@ function removeCanvasBackground() {
     }
 
     context.putImageData(imageDataAll, 0, 0)
+}
+
+function addURLs() {
+    var div = document.getElementById("grid")
+
+    websites.forEach((item) => {
+        var newDiv = document.createElement("div")
+        newDiv.className = "item col-lg-3"
+    
+        var a = document.createElement("a")
+        a.type = "button"
+        a.className = "btn btn-custom"
+        a.href = item
+    
+        var img = document.createElement("img")
+        img.src = "chrome://favicon/size/22@2.000000x/" + item
+    
+        a.appendChild(img)
+        newDiv.appendChild(a)
+        div.appendChild(newDiv)
+    })
 }
