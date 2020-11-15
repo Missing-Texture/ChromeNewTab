@@ -1,0 +1,13 @@
+body {
+    background-color: #222;
+    color: white;
+}
+
+.wttr {
+    position: absolute;
+    right: 40px;
+    bottom: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #111;
+}
